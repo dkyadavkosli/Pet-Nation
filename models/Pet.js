@@ -1,0 +1,72 @@
+const mongoose = require('mongoose');
+
+const Pet = new mongoose.Schema({
+    name:{
+        type:String,
+        require:true,
+        min:3,
+        max:25
+    },
+    ownerId:{
+        type:String,
+        require:true,
+        min:3,
+        max:25
+    },
+    pet_type:{
+        type:String,
+        require:true
+    },
+    breed:{ 
+        type:String,
+        require:true 
+    },
+    gender:{
+        type:String,
+        require:true 
+    },
+    color:{
+        type:String,
+        default:""
+    }, 
+    size:{
+        type:String,
+        default:""
+    },  
+    city:{ 
+        type:String,
+        require:true,
+        min:3
+    },
+    charges:{
+        type:String,
+        require:true,
+    },
+    image:{
+        type:String,
+        require:true,
+        min:3
+    },
+    email:{ 
+        type:String,
+        require:true,
+        min:3
+    },
+    phone:{
+        type:String,
+        require:true,
+    },
+    address:{
+        type:String,
+        require:true,
+        min:3
+    },
+    is_available:{
+        type:Boolean,
+        require:true,
+        min:3
+    }
+},
+{timestamps:true}); 
+
+module.exports = mongoose.model("Pets",Pet);
